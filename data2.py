@@ -47,7 +47,10 @@ sx = df['n_steps'].isin(range(14, ))
 
 # n of ingredients
 # print(df['n_ingredients'].value_counts())
-
+i3 = df['n_steps'].isin(range(0, 3))
+i6 = df['n_steps'].isin(range(3, 6))
+i10 = df['n_steps'].isin(range(6, 10))
+ix = df['n_steps'].isin(range(10, ))
 
 
 # food type (Healthy, Veg, Non-veg, Veg dessert, Non-veg dessert)

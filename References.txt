@@ -1,0 +1,8 @@
+https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions
+
+
+
+https://github.com/pemagrg1/flask-for-beginners
+https://www.datacamp.com/tutorial/recommender-systems-python
+https://www.kaggle.com/code/aayushmishra1512/food-recommender/notebook
+https://www.kaggle.com/code/ngohoantamhuy/food-recommendation-systems
