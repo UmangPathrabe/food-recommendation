@@ -23,10 +23,10 @@ def filter_database(userData):
         case 'Non-Veg':
             tnv = df['food types'].isin(['Non-veg'])
             dff = df[tnv]
-        case 'Veg Dessert':
+        case 'Veg_Dessert':
             tdv = df['food types'].isin(['Veg dessert'])
             dff = df[tdv]
-        case 'Non-Veg Dessert':
+        case 'Non-Veg_Dessert':
             tdnv = df['food types'].isin(['Non-Veg dessert'])
             dff = df[tdnv]
 

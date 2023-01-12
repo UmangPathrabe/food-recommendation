@@ -76,8 +76,8 @@ function App() {
               <option value="Healthy">Healthy</option>
               <option value="Veg">Veg</option>
               <option value="Non-Veg">Non-Veg</option>
-              <option value="Veg_D">Veg Dessert</option>
-              <option value="Non-Veg_D">Non-Veg Dessert</option>
+              <option value="Veg_Dessert">Veg Dessert</option>
+              <option value="Non-Veg_Dessert">Non-Veg Dessert</option>
             </select>
 
             <p>How much time do you have ?</p>
