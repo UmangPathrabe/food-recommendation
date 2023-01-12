@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  
+  backend:
+    image: backend-api
+    build: ./backend
+    container_name: "backend-api"
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: frontend-app
+    build: ./frontend
+    container_name: "frontend-app"
+    ports:
+      - "3000:3000"

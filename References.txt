@@ -6,3 +6,6 @@ https://github.com/pemagrg1/flask-for-beginners
 https://www.datacamp.com/tutorial/recommender-systems-python
 https://www.kaggle.com/code/aayushmishra1512/food-recommender/notebook
 https://www.kaggle.com/code/ngohoantamhuy/food-recommendation-systems
+https://docs.docker.com/compose/compose-file/build/
+https://flask.palletsprojects.com/en/2.2.x/api/
+https://reactjs.org/docs/create-a-new-react-app.html
