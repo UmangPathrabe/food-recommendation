@@ -9,3 +9,6 @@ https://www.kaggle.com/code/ngohoantamhuy/food-recommendation-systems
 https://docs.docker.com/compose/compose-file/build/
 https://flask.palletsprojects.com/en/2.2.x/api/
 https://reactjs.org/docs/create-a-new-react-app.html
+
+
+https://stackoverflow.com/questions/41402834/convert-string-array-to-array-in-javascript

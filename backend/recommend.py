@@ -12,6 +12,12 @@ df = pd.read_csv(database_file)     # Main data frame
 def filter_database(userData):
     # print("*****Total data - ", df.shape[0])
 
+    # for empty data
+    if (userData[1] == '' or int(userData[1]) < 0) : userData[1] = '999'
+    if (userData[2] == '' or int(userData[2]) < 0) : userData[2] = '99'
+    if (userData[3] == '' or int(userData[3]) < 0) : userData[3] = '99'
+
+
     # Filter data by type of food
     match userData[0]:
         case 'Healthy':
@@ -46,16 +52,23 @@ def filter_database(userData):
 
 
     # Sorting data by score which is based on average rating and number of votes
-    df_sorted = dff.sort_values('score',ascending = False).head(30)         # Taking top 30 best recipes
+    df_sorted = dff.sort_values('score',ascending = False).head(50)         # Taking top 30 best recipes
     # print("*****sorted top 30 recipes - ", df_sorted.shape[0])
     
 
     # Taking 3 random recipes from top 30
-    df_final = df_sorted.sample(3)
+    df_final = df_sorted.sample(2)
     # print("*****final recommended 3 recipes - ", df_final)
+    
+    if df.empty:
+        return {'name' : 'No results found, please change filters'}
 
 
-    return df_final.to_dict()
+    # print(df_final.to_dict(orient='list'))
+    # print(df_final.to_dict(orient='index'))
+    df_final = df_final.to_dict(orient='list')
+
+    return df_final
 
 
 
