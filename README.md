@@ -4,8 +4,8 @@ An application to recommend recipes according to user preference.
 ### Built With
 
 * [Python 3](https://www.python.org/)
-* [Flask](http://flask.pocoo.org/)
 * [React](https://reactjs.org/)
+* [Flask](http://flask.pocoo.org/)
 * [Docker](https://www.docker.com/)
 
 ### Dataset used from
@@ -20,18 +20,16 @@ An application to recommend recipes according to user preference.
 $ docker compose up
 ```
 *   Go to 
-```
 http://localhost:3000/
-```
 
-### Backend
+#### Backend
 
 Flask for the backend API (default port `5000`)
 
-### Frontend
+#### Frontend
 
 React for the frontend (default port `3000`)
 
 
-## License
+### License
 This project is licensed under the GNU General Public License - see the `LICENSE.md` file for details
