@@ -1,4 +1,4 @@
-# food-recommendation
+# Recipe Recommendation System
 This recipe recommendation system is built using Python, ReactJS and Flask API. It allows users to search for recipes based on their dietary preferences and needs. It also provides nutritional information for each recipe, allowing users to make informed decisions about their meals. The system is easy to use and provides a great way for users to discover new recipes and explore different cuisines.
 
 ### Built With
