@@ -12,10 +12,10 @@ An application to recommend recipes according to user preference.
 - [Food.com Recipes and Interactions](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions)
 
 ## Prerequisites
-- [docker and docker compose](https://docs.docker.com/compose/install/)
+- [Docker and Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Run
-*   From the **`food-recommendation/`** directory
+*   From the **`food-recommendation/`** directory run
 ```
 $ docker compose up
 ```
@@ -28,8 +28,8 @@ Flask for the backend API (default port `5000`)
 
 #### Frontend
 
-React for the frontend (default port `3000`)
+React for the frontend App (default port `3000`)
 
 
-### License
+## License
 This project is licensed under the GNU General Public License - see the `LICENSE.md` file for details
