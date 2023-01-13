@@ -12,7 +12,7 @@ This recipe recommendation system is built using Python, ReactJS and Flask API. 
 - [Food.com Recipes and Interactions](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions)
 
 ## Prerequisites
-- [Docker and Docker Compose](https://docs.docker.com/compose/install/)
+- [Install Docker and Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Run
 *   From the **`food-recommendation/`** directory run
