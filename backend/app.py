@@ -29,7 +29,7 @@ def rec():
     if request.method == 'POST':
         # get formData from post request
         jsonData = request.get_json('Finput')
-        print("***JSON data from frontend", jsonData, type(jsonData))
+        # print("*****JSON data from frontend", jsonData, type(jsonData))
 
         # storing user data from json in array
         userData.clear()
@@ -37,7 +37,7 @@ def rec():
         userData.append(jsonData.get('mins'))
         userData.append(jsonData.get('step'))
         userData.append(jsonData.get('ingr'))
-        print("***user data array from frontend", userData)
+        # print("*****user data array from frontend", userData)
 
         # passing user data for filtering
         recommendation = filter_database(userData)     # calls function from recommend.py
