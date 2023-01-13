@@ -41,15 +41,15 @@ def filter_database(userData):
     # Filtering data by number of ingredients required to prepare
     i = dff['n_ingredients'].isin(range(0, int(userData[3])))
     dff = dff[i]
-
     # print("*****Filtered data - ", dff.shape[0])
 
 
 
     # Sorting data by score which is based on average rating and number of votes
-    df_sorted = dff.sort_values('score',ascending = False).head(30)         # Taking top 3 best recipes
+    df_sorted = dff.sort_values('score',ascending = False).head(30)         # Taking top 30 best recipes
     # print("*****sorted top 30 recipes - ", df_sorted.shape[0])
     
+
     # Taking 3 random recipes from top 30
     df_final = df_sorted.sample(3)
     # print("*****final recommended 3 recipes - ", df_final)
