@@ -83,10 +83,10 @@ function App() {
             <p>How much time do you have ?</p>
             <input name='mins' type="number" placeholder='Number in Minutes' />
 
-            <p>How many steps ?</p>
+            <p>How many step process do you prefer?</p>
             <input name='steps' type="number" placeholder='Number' />
 
-            <p>How many ingredients ?</p>
+            <p>How many ingredients do you have?</p>
             <input name='ingredients' type="number" placeholder='Number' />
 
             <br></br><br></br>
