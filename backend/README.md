@@ -32,7 +32,7 @@ run app.py from /frontend for JSON5
 ## Database
 
 The database is stored in a .csv file in **`database/`**
-Trying to run directly on Windows can cause issues with detecting this file from recommend.py
+Trying to run directly on Windows can cause issues with detecting this file from recommend.py  
 If you face issues, please manually change to the direct path for windows in recommend.py
 
 ### Database Preprocessing
@@ -51,7 +51,7 @@ You can use the test endpoint to test connection
 The PyDoc files can be read from app.html and recommend.html in **`/pydoc`** folder
 
 ### References
-https://flask.palletsprojects.com/en/2.2.x/api/
-https://github.com/pemagrg1/flask-for-beginners
-https://docs.docker.com/compose/gettingstarted/
+https://flask.palletsprojects.com/en/2.2.x/api/  
+https://github.com/pemagrg1/flask-for-beginners  
+https://docs.docker.com/compose/gettingstarted/  
 
