@@ -31,7 +31,7 @@ run app.py from /frontend for JSON5
 
 ## Database
 
-The database is stored in a .csv file in **`database/`**
+The database is stored in a .csv file in **`database/`**  
 Trying to run directly on Windows can cause issues with detecting this file from recommend.py  
 If you face issues, please manually change to the direct path for windows in recommend.py
 

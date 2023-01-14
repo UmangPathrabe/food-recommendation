@@ -1,7 +1,7 @@
 # Frontend
 
-This project is a frontend web app built with ReactJS for recipe recommendation.
-Main code is in App.js in **`/src`** folder
+This project is a frontend web app built with ReactJS for recipe recommendation.  
+Main code is in App.js in **`/src`** folder.
 
 
 ## Built With
@@ -12,7 +12,7 @@ Main code is in App.js in **`/src`** folder
 ## Prerequisites
 
 You will need the following things properly installed on your computer:
-* [node.js v18.13.0] (https://nodejs.org/en/)
+* [node.js v18.13.0](https://nodejs.org/en/)
 * [JSON5](https://json5.org/) (required for better parse() function)
 
 
@@ -40,7 +40,7 @@ From the /frontend directory run:
 
 Proxy needs to be defined in package.json for forwarding API calls to API's port (default 5000 for flask)
 
-for windows development:
+for windows:
 `"proxy": "http://127.0.0.1:5000",`
 
 for docker:
@@ -58,7 +58,7 @@ https://stackoverflow.com/questions/36038454/parsing-string-as-json-with-single-
 
 
 
-## Extra information
+## Extra Information
 
 This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
