@@ -30,7 +30,8 @@ For more information see the `README.md` file in the backend directory.
 ### Frontend
 
 React for the frontend App (default port: 3000)  
-For more information see the `README.md` file in the frontend directory.
+For more information see the `README.md` file in the frontend directory.  
+
 If the chow command takes too long when building the container, it can be removed, but it may cause problems.
 
 
