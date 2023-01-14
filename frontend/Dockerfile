@@ -19,7 +19,7 @@ EXPOSE 3000
 EXPOSE 5000
 
 # setting user and permission to access the /app folder
-# can be removed if container takes too long to build, but may cause problems
+# RUN chown & USER node can be removed if container takes too long to build, but may cause problems
 RUN chown -R node /usr/src/app
 USER node
 
