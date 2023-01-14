@@ -15,6 +15,7 @@ This recipe recommendation system is built using Python, ReactJS and Flask API. 
 - [Install Docker and Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Run
+*   Download or Clone the repository
 *   From the **`/food-recommendation`** directory run
 ```
 $ docker compose up
