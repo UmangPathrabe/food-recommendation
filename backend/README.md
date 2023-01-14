@@ -19,15 +19,15 @@ You will need the following things properly installed on your computer:
 * Install [python](https://www.python.org/downloads/)
 
 * run to install flask:
-'''
+```
   $ pip install Flask
-'''
+```
 
 ### Running
 run app.py from /frontend for JSON5
-'''
+```
   $ python app.py
-'''
+```
 
 ## Database
 

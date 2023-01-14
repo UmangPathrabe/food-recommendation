@@ -21,34 +21,34 @@ You will need the following things properly installed on your computer:
 * Install node.js
 
 * run in /frontend to get dependencies:
-'''
+```
   $ npm install
-'''
+```
 
 * run in /frontend for JSON5
-'''
+```
   $ npm install json5
-'''
+```
 
 ### Running
 From the /frontend directory run:
-'''
+```
   $ npm start
-'''
+```
 
 ### Proxy
 
 Proxy needs to be defined in package.json for forwarding API calls to API's port (default 5000 for flask)
 
 for windows development:
-'''
+```
   "proxy": "http://127.0.0.1:5000",
-'''
+```
 
 for docker:
-'''
+```
   "proxy": "http://host.docker.internal:5000",
-'''
+```
 
 ### JSDoc
 
