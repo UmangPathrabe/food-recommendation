@@ -24,12 +24,12 @@ http://localhost:3000/
 
 ### Backend
 
-Flask for the backend API (default port `5000`)  
+Flask for the backend API (default port: 5000)  
 For more information see the `README.md` file in the backend directory
 
 ### Frontend
 
-React for the frontend App (default port `3000`)  
+React for the frontend App (default port: 3000)  
 For more information see the `README.md` file in the frontend directory
 
 
