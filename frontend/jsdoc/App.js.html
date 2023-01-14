@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: App.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: App.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+
+/**
+ * Renders the main app page
+ * on button press, gets user input and sends POST request with input data in JSON
+ * recieves POST response with JSON data and renders it 
+ * 
+ * 
+ * @module JSON5      used for parsing steps data
+ *  
+ * @return  {HTML}    Renders main page
+ */
+function App() {
+
+    /**
+     * calling async function at submit event
+     * 
+     * @async   Used so that we can use await in fetch to wait for response
+     */
+    const handleSubmit = async(event) => {
+        event.preventDefault();           // prevents reset of entered data
+        const formData = event.target;    //storing data from form elements
+
+        // making JSON of form data
+        const jsonData = {
+          type: formData['type'].value, 
+          mins: formData['mins'].value, 
+          step: formData['steps'].value, 
+          ingr: formData['ingredients'].value};
+          
+        const sendData = jsonData;          //  JSON object for sending data
+
+
+        /**
+         * using fetch to send JSON to api by POST method and wait for reponse
+         * then rendering the recieved JSON reponse
+         * 
+         * @constant {JSON} showData  stores data to be diplayed
+         */
+        await fetch("/api/rec", {method: "POST", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify(sendData)})
+          .then((response) => response.json()     // storing entire api response
+            .then((responseData) => {             // storing JSON object from api respone
+
+              const showData = responseData;
+
+              // for (no recipe found) error response
+              if (showData.error === 1) {
+                const Display = &lt;p>No results found, please change filters&lt;/p>
+                ReactDOM.render(Display,document.querySelector('#root'));
+              } 
+
+
+              var temp;     // used as temp storage
+
+              /**
+              * getting string of ingredients and making a JSON array
+              * replacing single quotes with double for parse()
+              * normal parse() is used since ingredients data has no random single quotes
+              * @constant {array} ingr     stores ingredients
+              */
+              temp = showData.ingredients[0].replace(/'/g, '"');
+              const ingr = JSON.parse(temp);
+
+
+              /**
+              * using JSON5 to make JSON array from string without having issues with single quotes
+              * @module JSON5       better parse()
+              * @constant {array} step     stores steps
+              */
+              const JSON5 = require('json5');
+              const step = JSON5.parse(showData.steps[0]);
+              // old parse() without JSON5 (causes a lot more issues with single quotes)
+              // temp = showData.steps[0].replace(/'/g, '"');
+              // const step = JSON.parse(temp);
+
+
+              /**
+              * getting string of nutrition data and making a JSON array of numbers
+              * removing '[' and ']' for easy split into array
+              * @constant {array} nutrition    stores nutrition data
+              */
+              temp = showData.nutrition[0].replace('[', ' ');
+              temp = temp.replace(']', '');
+              temp = temp.split(',');
+              const nutrition = temp;
+
+              // Displaying recommendation output
+              const Display = &lt;React.Fragment>
+
+                                &lt;h1>{showData.name[0].toUpperCase()}&lt;/h1>
+
+                                &lt;p>{showData.description[0].charAt(0).toUpperCase() + showData.description[0].slice(1)}&lt;/p>
+
+                                &lt;p>&lt;b>Time to make - &lt;/b>{showData.minutes[0]} minutes&lt;/p>
+
+                                &lt;div class="grid-container">
+                                &lt;div>
+                                &lt;h4>Ingredients -&lt;/h4>
+                                &lt;ul className='ingr_list'>
+                                  {ingr.map(item => {return &lt;li>{item}&lt;/li>;})}
+                                &lt;/ul>
+                                &lt;/div>
+
+                                &lt;div>
+                                &lt;h4>Steps -&lt;/h4>
+                                &lt;ol>
+                                  {step.map(item => {return &lt;li>{item}&lt;/li>;})}
+                                &lt;/ol>
+                                &lt;/div>
+                                &lt;/div>
+
+                                &lt;br>&lt;/br>
+                                &lt;h4>Nutritional Information -&lt;/h4>
+                                &lt;p>This recipe has {nutrition[0]} Calories&lt;/p>
+                                &lt;ul className='nutri'>
+                                  &lt;li>Total Fat = {parseInt(nutrition[1])} % DV&lt;/li>
+                                  &lt;li>Sugar = {parseInt(nutrition[2])} % DV&lt;/li>
+                                  &lt;li>Sodium = {parseInt(nutrition[3])} % DV&lt;/li>
+                                  &lt;li>Protein = {parseInt(nutrition[4])} % DV&lt;/li>
+                                  &lt;li>Saturated Fat = {parseInt(nutrition[5])} % DV&lt;/li>
+                                  &lt;li>Carbohydrates = {parseInt(nutrition[6])} % DV&lt;/li>
+                                  &lt;span>&lt;i>* % DV stands for Percent Daily Value&lt;/i>&lt;/span>
+                                &lt;/ul>
+
+                              &lt;/React.Fragment>;
+
+              ReactDOM.render(Display,document.querySelector('#root'));     // renders recipe data
+
+            })
+          )
+      }
+
+
+    // default return of App() which renders main page
+    return (
+        &lt;React.Fragment>
+
+          &lt;h2>Recipe Recommendation System&lt;/h2>
+          
+          &lt;form onSubmit={e => handleSubmit(e)}>
+            &lt;b>
+
+          &lt;p>Select the Type of Food you want to have:&lt;/p> 
+            &lt;select name="type">
+              &lt;option value="Healthy">Healthy&lt;/option>
+              &lt;option value="Veg">Veg&lt;/option>
+              &lt;option value="Non-Veg">Non-Veg&lt;/option>
+              &lt;option value="Veg_Dessert">Veg Dessert&lt;/option>
+              &lt;option value="Non-Veg_Dessert">Non-Veg Dessert&lt;/option>
+            &lt;/select>
+
+            &lt;p>How much time do you have for preparation ?&lt;/p>
+            &lt;input name='mins' type="number" placeholder='Number in Minutes' />
+
+            &lt;p>How many steps in the process do you prefer ?&lt;/p>
+            &lt;input name='steps' type="number" placeholder='Number' />
+
+            &lt;p>How many ingredients are available with you ?&lt;/p>
+            &lt;input name='ingredients' type="number" placeholder='Number' />
+
+            &lt;br>&lt;/br>&lt;br>&lt;/br>
+            &lt;button>&lt;b>Recommend&lt;/b>&lt;/button>
+            &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+            &lt;/b>
+          &lt;/form>
+
+        &lt;/React.Fragment>
+      )
+    }
+
+export default App;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-JSON5%2520%2520%2520%2520%2520%2520used%2520for%2520parsing%2520steps%2520data.html">JSON5      used for parsing steps data</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Jan 14 2023 22:33:46 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

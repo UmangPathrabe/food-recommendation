@@ -1,8 +1,72 @@
-# Getting Started with Create React App
+# Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a frontend web app built with ReactJS for recipe recommendation.
+Main code is in App.js in **`/src`** folder
 
-## Available Scripts
+
+## Built With
+
+* [React](https://reactjs.org/)
+* [Docker](https://www.docker.com/)
+
+## Prerequisites
+
+You will need the following things properly installed on your computer:
+* [node.js v18.13.0] (https://nodejs.org/en/)
+* [JSON5](https://json5.org/) (required for better parse() function)
+
+
+### For running directly on Windows
+
+* Install node.js
+
+* run in /frontend to get dependencies:
+'''
+  $ npm install
+'''
+
+* run in /frontend for JSON5
+'''
+  $ npm install json5
+'''
+
+### Running
+From the /frontend directory run:
+'''
+  $ npm start
+'''
+
+### Proxy
+
+Proxy needs to be defined in package.json for forwarding API calls to API's port (default 5000 for flask)
+
+for windows development:
+'''
+  "proxy": "http://127.0.0.1:5000",
+'''
+
+for docker:
+'''
+  "proxy": "http://host.docker.internal:5000",
+'''
+
+### JSDoc
+
+The JSDoc files can be read from App.js.html in **`/jsdoc`** folder
+
+### References
+https://reactjs.org/docs/create-a-new-react-app.html
+https://stackoverflow.com/questions/41402834/convert-string-array-to-array-in-javascript
+https://stackoverflow.com/questions/36038454/parsing-string-as-json-with-single-quotes
+
+
+
+
+## Extra information
+
+This project was created with [Create React App](https://github.com/facebook/create-react-app).
+
+## Create React App - Available Scripts:
 
 In the project directory, you can run:
 
@@ -28,50 +92,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
-
-
-  "proxy": "http://127.0.0.1:5000",
-  "proxy": "http://host.docker.internal:5000",

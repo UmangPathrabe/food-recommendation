@@ -5,11 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 50px;
-  padding-top: 20px;
+  padding-left: 55px;
+  padding-top: 15px;
   padding-bottom: 40px;
+  padding-right: 60px;
   background-color: #faebce;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
 }
 
 input[type=number], select {
@@ -33,27 +35,29 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 button:hover {
   background-color: #ec7627;
 }
 
-
-h1 {
-  color: #a83000;
-  font-size: 36px;
+h2 {
+  color: #027400;
+  font-size: 34px;
   text-align: center;
-  width: 90%;
+  width: 50%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h2 {
-  color: #a83000;
-  font-size: 30px;
+
+
+
+h1 {
+  color: #027400;
+  font-size: 36px;
   text-align: center;
-  width: 50%;
+  width: 95%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -62,12 +66,12 @@ h4 {
 }
 
 p {
-  width: 90%;
+  width: 95%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 ol {
-  width: 90%;
+  width: 85%;
 }
 
 .nutri {
@@ -86,6 +90,14 @@ ol {
 span {
   font-size: 12px;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 20px;
+}
+
+
 
 
 
